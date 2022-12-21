@@ -1,0 +1,36 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; */
+    }
+
+#page_look {
+    height: 200px;
+    background-color: #1e538f; /* For browsers that do not support gradients */
+    background-image: radial-gradient(circle, #55697d 0%, #1f6c7b 100%);
+} 
+
+form {
+    margin-top: 30px;
+}
+
+.text {
+    margin-top: 50px;
+    text-align: center;
+    color: lightcyan;
+}
+
+#parent {
+    display: table;
+    width: 100%;
+}
+
+#form_post {
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+} 
+
+.card {
+    margin-top: 30px;
+}

@@ -1,0 +1,55 @@
+#page_look {
+    height: 200px;
+    background-color: #cc972e; /* For browsers that do not support gradients */
+    background-image: radial-gradient(circle, #cee637 0%, hsl(83, 80%, 16%) 100%);
+}
+
+h1 {
+    text-align: center;
+}
+
+
+.flex-container {
+    display: flex;
+    align-items: flex-start;
+    justify-content:space-around;
+    margin: 0 auto;
+}
+.container {
+    margin: 5%;
+    margin-top: 10PX;
+    padding: 2%;
+}
+.form-group{
+    margin-bottom: 15px;
+}
+
+.with-border {
+    border: 2px solid black;
+}
+.white {
+    background-color: white;
+}
+.grey {
+    background-color: rgb(182, 182, 182);
+}
+
+.with-margins {
+    margin: 20px;
+}
+.with-padding {
+    padding: 20px;
+}
+.half-width {
+    width: 48%;
+}
+.majority-width {
+    width: 80%;
+}
+.flex-container {
+    display: flex;
+}
+.error {
+    color: red;
+    text-align: center;
+}

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet"href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>Dashboard</title>
+</head>
+<body>
+    <body>
+        <nav class="navbar" style="background-color:khaki">
+            <ul class="nav">
+                <li class="nav-item">
+                    <p class="nav-link">Welcome {{user.first_name}} {{user.last_name}}</p>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link"href="/recipes/create">Add a new recipe!</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/logout">Log Out</a>
+                </li>
+            </ul>
+        </nav>    
+            <h1>Recipes made by users:</h1>
+            <div class="container">
+                <table class="table table-striped">
+                    <thead>
+    
+                        <tr>
+                            <th>Name</th>
+                            <th>Under 30 min?</th>
+                            <th>Actions</th>
+                        </tr>
+    
+                    </thead>
+                    <tbody>
+                        {% for recipe in recipes: %}
+                        <tr>
+                            <td>{{recipe.name}} by {{recipe.user.first_name}}</td>
+                            <td>{% if recipe.under_30: %}
+                                Yes
+                                {% else: %}
+                                No
+                                {% endif %}
+                            </td>
+    
+                            <td>
+                                <a href="/recipes/{{recipe.id}}">view instructions| </a>
+                                <!--edit and delete conditional-->
+                                {% if recipe.user.id == user.id: %}
+                                <a href="/recipes/edit/{{recipe.id}}">edit | </a>
+                                <a href="/recipes/delete/{{recipe.id}}"> delete</a>
+                                {% endif %}
+                                
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+</body>
+</html>
+</body>
+</html>
