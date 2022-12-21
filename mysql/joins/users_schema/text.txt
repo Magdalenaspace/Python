@@ -1,0 +1,21 @@
+INSERT INTO users (first_name, last_name, email)
+VALUES ("Mary","Scot","mscot@query.com"),
+("Faust","Gyote","fg@query.com"),
+("David","Li","dli@query.com");
+
+SELECT * FROM users;
+
+SELECT * FROM users
+WHERE email = "fg@query.com";
+
+SELECT * FROM users
+WHERE id = 8;
+
+UPDATE users SET last_name = "Jane"
+WHERE users.id = 4;
+
+DELETE FROM users
+WHERE users.id = 6;
+
+SELECT * FROM users
+ORDER BY first_name DESC;

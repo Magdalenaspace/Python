@@ -1,0 +1,67 @@
+-- Create 3 new dojos (*2)
+INSERT INTO dojos(name)
+VALUES("Heart"),("Brain"),("Muscle");
+
+-- Delete the 3 dojos you just created
+SET SQL_SAFE_UPDATES = 0;
+DELETE FROM dojos;
+SELECT * FROM dojos;
+
+-- Create 3 new dojos (*2)
+INSERT INTO dojos(name)
+VALUES("Heart"),("Brain"),("Muscle");
+
+-- Delete the 3 dojos you just created
+SET SQL_SAFE_UPDATES = 0;
+DELETE FROM dojos;
+SELECT * FROM dojos;
+
+--  update ninjas table set primary_field = 'value'...............
+-- Create 3 ninjas that belong to the first, second, third dojo
+INSERT INTO ninjas (first_name,last_name,dojo_id)
+VALUES("Cameron", "Jhons", 4), ("Jhonathan", "Scot", 4), ("Sam", "Lane", 4);
+
+INSERT INTO ninjas (first_name,last_name,age,dojo_id)
+VALUES("Mike", "Deverna", 3), ("Noel", "Lane", 3), ("Mary", "Jane", 3);
+
+INSERT INTO ninjas (first_name,last_name,age,dojo_id)
+VALUES("Haley", "Samuel", 2), ("Noe", "Marshall", 2), ("Aris", "Adrineh", 2);
+
+-- Retrieve all the ninjas from the first dojo
+SELECT * FROM dojos
+LEFT JOIN ninjas ON dojos.id = ninjas.dojo_id
+WHERE dojos.id = 4;
+
+-- Retrieve all the ninjas from the last dojo
+SELECT * FROM dojos
+LEFT JOIN ninjas ON dojos.id = ninjas.dojo_id
+	WHERE dojos.id = (SELECT id FROM dojos ORDER BY id DESC LIMIT 2);
+    
+--  Retrieve the last ninja's dojo
+
+SELECT * FROM dojos
+WHERE dojos.id = (SELECT dojo_id FROM ninjas ORDER BY dojo_id DESC LIMIT 1);
+-- Create 3 ninjas that belong to the first, second, third dojo
+INSERT INTO ninjas (first_name,last_name,dojo_id)
+VALUES("Cameron", "Jhons", 4), ("Jhonathan", "Scot", 4), ("Sam", "Lane", 4);
+
+INSERT INTO ninjas (first_name,last_name,age,dojo_id)
+VALUES("Mike", "Deverna", 3), ("Noel", "Lane", 3), ("Mary", "Jane", 3);
+
+INSERT INTO ninjas (first_name,last_name,age,dojo_id)
+VALUES("Haley", "Samuel", 2), ("Noe", "Marshall", 2), ("Aris", "Adrineh", 2);
+
+-- Retrieve all the ninjas from the first dojo
+SELECT * FROM dojos
+LEFT JOIN ninjas ON dojos.id = ninjas.dojo_id
+WHERE dojos.id = 4;
+
+-- Retrieve all the ninjas from the last dojo
+SELECT * FROM dojos
+LEFT JOIN ninjas ON dojos.id = ninjas.dojo_id
+	WHERE dojos.id = (SELECT id FROM dojos ORDER BY id DESC LIMIT 2);
+    
+--  Retrieve the last ninja's dojo
+
+SELECT * FROM dojos
+WHERE dojos.id = (SELECT dojo_id FROM ninjas ORDER BY dojo_id DESC LIMIT 1);
